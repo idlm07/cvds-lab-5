@@ -4,6 +4,17 @@ xmlns:h="http://xmlns.jcp.org/jsf/html"
 xmlns:p="http://primefaces.org/ui">
  <h:head></h:head>
  <h:body>
-<p:editor />
- </h:body>
+    <h:form id="guess_form">
+        <p:panelGrid columns="1">
+        <p:outputLabel value="#{guessBean.estado}" />
+        <p:outputLabel  value="#{guessBean.numero}" />
+        <p:inputText value="#{guessBean.numeroEscogido}" />
+        <p:outputLabel value="#{guessBean.intentos}" />
+        <p:outputLabel value="#{guessBean.premio}" />
+        
+        <p:commandButton value="Adivinar" update="guess_form" actionListener="#{guessBean.guess}"></p:commandButton>
+        <p:commandButton value="Reiniciar" update="guess_form" actionListener="#{guessBean.reset}"></p:commandButton>
+        </p:panelGrid>
+    </h:form>
+</h:body>
 </html>
